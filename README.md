@@ -22,6 +22,45 @@ print("\033[1;34m            \033[1;30;40m##\033[1;41;31m##\033[1;42;32m##\033[1
 The kernel use for this exemple is the a barebone kernel from [Kernels 101 –
 Let’s write a Kernel](https://arjunsreedharan.org/post/82710718100/kernels-101-lets-write-a-kernel) located in the **exemple** directory.
 
+## Usage
+ 1. Implement callbacks functions
+    ```c
+    /**
+     * This function is call by vtconsole when a console cell update.
+     * 
+     * Parameters
+     * ----------
+     * vtc: the calling vtconsole object
+     * cell: the cell being updated
+     * x, y: position of the cell on the screen
+     */
+    void paint_callback(vtconsole_t *vtc, vtcell_t *cell, int x, int y)
+    {
+        // Your code here!
+    }
+
+    /**
+     * This function is call by vtconsole when the cursor move on the screen. 
+     * 
+     * Parameters
+     * ----------
+     * vtc: the calling vtconsole object
+     * vtcursor: the new state of the cursor
+     */
+    void cursor_move_callback(vtconsole_t *vtc, vtcursor_t *cur)
+    {
+        // Your code here!
+    }
+    ```
+ 2. instantiate the vtconsole_t object
+    ```c
+    vtc = vtconsole(SCREEN_WIDTH, SCREEN_HEIGHT, paint_callback, cursor_move_callback);
+    ```
+ 3. Enjoy!
+    ```c
+    vtconsole_write(vtc, "Hello, world!", 13);
+    ```
+ 
 
 ## ✨ Features (description from [wikipedia](https://en.wikipedia.org/wiki/ANSI_escape_code))
 
