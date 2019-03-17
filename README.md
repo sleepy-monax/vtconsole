@@ -1,7 +1,7 @@
 <img align="right" width="150" height="150" src="assets/logo.png">
 
 # vtconsole
-A **ansi** escape code parser and renderer for hobby operating systems.
+An **ansi** escape code parser and renderer for hobby operating systems.
 
 ## 👨‍🏫 Exemple
 
@@ -101,4 +101,4 @@ Feel free to open an issue or a pull request if you would like to contribute or 
 
 ## ✌ Thanks
 
-- To [https://github.com/64/cansid]() which this project was originaly based on
+- To [https://github.com/64/cansid](https://github.com/64/cansid) which this project was originaly based on
