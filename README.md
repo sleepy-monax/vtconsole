@@ -1,8 +1,10 @@
 <img align="right" width="150" height="150" src="assets/logo.png">
 
 # vtconsole
-An **ansi** escape code parser and renderer for hobby operating systems.
-
+**vtconsole** is an **ansi** escape code parser and renderer for hobby operating systems.
+**vtconsole** alow you to add easily a rich console to your kernel.
+**vtconsole** support changing color and do cursor movement.
+**vtconsole** work like your traditional UNIX terminal using **ansi/vt100** escape sequences like `\033[1m`.
 ## 👨‍🏫 Exemple
 
 ### 👨‍💻 C code
@@ -64,14 +66,13 @@ Let’s write a Kernel](https://arjunsreedharan.org/post/82710718100/kernels-101
 
 ## ✨ Features (description from [wikipedia](https://en.wikipedia.org/wiki/ANSI_escape_code))
 
-- CSI sequences `\033[`
-- `CSI n ; m H` CUP – Cursor Position
+- `\033[n;mH` CUP – Cursor Position
   >Moves the cursor to row n, column m. The values are 1-based, and default to 1 (top left corner) if omitted. A sequence such as CSI ;5H is a synonym for CSI 1;5H as well as CSI 17;H is the same as CSI 17H and CSI 17;1H
-- `CSI n J` ED – Erase in Display
-    > Clears part of the screen. If n is 0 (or missing), clear from cursor to end of screen. If n is 1, clear from cursor to beginning of the screen. If n is 2, clear entire screen (and moves cursor to upper left on DOS ANSI.SYS). If n is 3, clear entire screen and delete all lines saved in the scrollback buffer (this feature was added for xterm and is supported by other terminal applications).
-- `CSI n K` EL – Erase in Line
+- `\033[nJ` ED – Erase in Display
+    > Clears part of the screen. If n is 0 (or missing), clear from cursor to end of screen. If n is 1, clear from cursor to beginning of the screen. If n is 2, clear entire screen.
+- `\033[nK` EL – Erase in Line
     > Erases part of the line. If n is 0 (or missing), clear from cursor to the end of the line. If n is 1, clear from cursor to beginning of the line. If n is 2, clear entire line. Cursor position does not change.
-- `CSI n m` SGR – Select Graphic Rendition
+- `\033[nm` SGR – Select Graphic Rendition
     > Sets the appearance of the following characters, see SGR parameters below.
 
 ## Supported SGR parameters
