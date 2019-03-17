@@ -2,8 +2,11 @@
 
 # vtconsole
 **vtconsole** is an **ansi** escape code parser and renderer for hobby operating systems.
+
 **vtconsole** alow you to add easily a rich console to your kernel.
+
 **vtconsole** support changing color and do cursor movement.
+
 **vtconsole** work like your traditional UNIX terminal using **ansi/vt100** escape sequences like `\033[1m`.
 ## 👨‍🏫 Exemple
 
