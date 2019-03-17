@@ -1,7 +1,7 @@
 <img align="right" width="150" height="150" src="assets/logo.png">
 
 # vtconsole
-A **ansi** escape code parser and renderer for hobby operating systems.
+An **ansi** escape code parser and renderer for hobby operating systems.
 
 ## 👨‍🏫 Exemple
 
