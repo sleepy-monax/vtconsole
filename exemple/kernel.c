@@ -166,7 +166,7 @@ void kmain(void)
     print("\033[H\033[2J");
 
     // Simple hello world.
-    print("Hello, world!\n");
+    // print("Hello, world!\n");
 
     // A neoftech like interface
     print("\033[1;34m    _____   \033[1;34muser\033[1;37m@\033[1;34mcore\n");

@@ -3,7 +3,27 @@
 # vtconsole
 A **ansi** escape code parser and renderer for hobby operating systems.
 
-## Features (description from [wikipedia](https://en.wikipedia.org/wiki/ANSI_escape_code))
+## 👨‍🏫 Exemple
+
+### 👨‍💻 C code
+```c
+print("\033[1;34m    _____   \033[1;34muser\033[1;37m@\033[1;34mcore\n");
+print("\033[1;34m   / ____|  \033[1;37mOS:       \033[0;37mskift\n");
+print("\033[1;34m  | (___    \033[1;37mKERNEL:   \033[0;37mhjert\n");
+print("\033[1;34m   \\___ \\   \033[1;37mUPTIME:   \033[0;37m00:00\n");
+print("\033[1;34m   ____) |  \033[1;37mSHELL:    \033[0;37m/bin/sh\n");
+print("\033[1;34m  |_____/   \n");
+print("\033[1;34m            \033[1;30;40m##\033[1;41;31m##\033[1;42;32m##\033[1;43;33m##\033[1;44;34m##\033[1;45;35m##\033[1;46;36m##\033[1;47;37m##\033[0m\n");
+```
+
+### 💻 Result
+![](assets/preview.png)
+
+The kernel use for this exemple is the a barebone kernel from [Kernels 101 –
+Let’s write a Kernel](https://arjunsreedharan.org/post/82710718100/kernels-101-lets-write-a-kernel) located in the **exemple** directory.
+
+
+## ✨ Features (description from [wikipedia](https://en.wikipedia.org/wiki/ANSI_escape_code))
 
 - CSI sequences `\033[`
 - `CSI n ; m H` CUP – Cursor Position
@@ -24,7 +44,7 @@ A **ansi** escape code parser and renderer for hobby operating systems.
 | 30–37 | Set foreground color              |
 | 40–47 | Set background color              |
 
-## Supported Colors
+## 🎨 Supported Colors
 
 | name    | id  | color                                              |
 | ------- | --- | -------------------------------------------------- |
@@ -36,3 +56,10 @@ A **ansi** escape code parser and renderer for hobby operating systems.
 | Magenta | 5   | ![#000](https://placehold.it/15/f0f/000000?text=+) |
 | Cyan    | 6   | ![#000](https://placehold.it/15/0ff/000000?text=+) |
 | White   | 7   | ![#fff](https://placehold.it/15/fff/000000?text=+) |
+
+## 👐 Contributing
+Feel free to open an issue or a pull request if you would like to contribute or ask a question.
+
+## ✌ Thanks
+
+- To [https://github.com/64/cansid]() which this project was originaly based on
