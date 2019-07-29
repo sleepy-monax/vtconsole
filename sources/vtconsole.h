@@ -82,7 +82,7 @@ vtconsole_t* vtconsole(int width, int height, vtc_paint_handler_t on_paint, vtc_
 void vtconsole_delete(vtconsole_t *c);
 
 void vtconsole_clear(vtconsole_t *vtc, int fromx, int fromy, int tox, int toy);
-void vtconsole_scroll(vtconsole_t *vtc);
+void vtconsole_scroll(vtconsole_t *vtc, int lines);
 void vtconsole_newline(vtconsole_t *vtc);
 
 void vtconsole_putchar(vtconsole_t *vtc, char c);

@@ -48,12 +48,16 @@ void vtconsole_clear(vtconsole_t *vtc, int fromx, int fromy, int tox, int toy)
     }
 }
 
-void vtconsole_scroll(vtconsole_t *vtc)
+void vtconsole_scroll(vtconsole_t *vtc, int lines)
 {
-    // Scroll the screen.
-    for (int i = 0; i < ((vtc->width * vtc->height) - vtc->width); i++)
+    if (lines == 0) return;
+
+    lines = lines > vtc->height ? vtc->height : lines;
+
+    // Scroll the screen by number of $lines.
+    for (int i = 0; i < ((vtc->width * vtc->height) - (vtc->width * lines)); i++)
     {
-        vtc->buffer[i] = vtc->buffer[i + vtc->width];
+        vtc->buffer[i] = vtc->buffer[i + (vtc->width * lines)];
 
         if (vtc->on_paint)
         {
@@ -61,8 +65,8 @@ void vtconsole_scroll(vtconsole_t *vtc)
         }
     }
 
-    // Clear the last line.
-    for (int i = ((vtc->width * vtc->height) - vtc->width); i < vtc->width * vtc->height; i++)
+    // Clear the last $lines.
+    for (int i = ((vtc->width * vtc->height) - (vtc->width * lines)); i < vtc->width * vtc->height; i++)
     {
         vtcell_t *cell = &vtc->buffer[i];
         cell->attr = VTC_DEFAULT_ATTR;
@@ -74,10 +78,12 @@ void vtconsole_scroll(vtconsole_t *vtc)
         }
     }
 
-    // Move the cursor up a line.
+    // Move the cursor up $lines
     if (vtc->cursor.y > 0)
     {
-        vtc->cursor.y--;
+        vtc->cursor.y -= lines;
+
+        if (vtc->cursor.y < 0) vtc->cursor.y = 0;
 
         if (vtc->on_move)
         {
@@ -94,7 +100,7 @@ void vtconsole_newline(vtconsole_t *vtc)
 
     if (vtc->cursor.y == vtc->height)
     {
-        vtconsole_scroll(vtc);
+        vtconsole_scroll(vtc, 1);
     }
 
     if (vtc->on_move)
@@ -349,6 +355,34 @@ void vtconsole_process(vtconsole_t *vtc, char c)
         {
             switch (c)
             {
+            case 'A':
+                /* Cursor up P1 rows */
+                break;
+            case 'B':
+                /* Cursor down P1 rows */
+                break;
+
+            case 'C':
+                /* Cursor right P1 columns */
+                break;
+            case 'D':
+                /* Cursor left P1 columns */
+                break;
+            
+            case 'E':
+                /* Cursor to first column of line P1 rows down from current */
+                break;
+            case 'F':
+                /* Cursor to first column of line P1 rows up from current */
+                break;
+
+            case 'G':
+                /* Cursor to column P1 */
+                break;
+            case 'd':
+                /* Cursor left P1 columns */
+                break;
+
             case 'H':
                 vtconsole_csi_cup(vtc, parser->stack, parser->index);
                 break;
