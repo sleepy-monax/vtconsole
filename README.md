@@ -8,7 +8,7 @@
 **vtconsole** support changing color and do cursor movement.
 
 **vtconsole** work like your traditional UNIX terminal using **ansi/vt100** escape sequences like `\033[1m`.
-## 👨‍🏫 Exemple
+## 👨‍🏫 Example
 
 ### 👨‍💻 C code
 ```c
