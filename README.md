@@ -1,6 +1,8 @@
 <img align="right" width="150" height="150" src="assets/logo.png">
 
 # vtconsole
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
+
 **vtconsole** is an **ansi** escape code parser and renderer for hobby operating systems.
 
 **vtconsole** alow you to add easily a rich console to your kernel.
